@@ -24,6 +24,11 @@ function QuizBody() {
         console.log(tenQuestions);
     };
 
+    function resetQuiz() {
+        setGameOff(true);
+        setTenQuestions([]);
+    };
+
     function handleAnswerChoice () {
         console.log('Hello!');
     };
@@ -42,30 +47,9 @@ function QuizBody() {
                         </button>
                         <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
                             <button type='button' className='btn btn-link' data-toggle='modal' data-target='#rulesModal'>How To Play</button>
+                            <button type='button' className='btn btn-link' onClick={resetQuiz}>Reset Quiz</button>
                         </div>
                     </div>
-                    </div>
-                </div>
-
-                <div className="modal fade" id="highScoreModal" tabIndex="-1" role="dialog" aria-labelledby="highScoreModalLabel" aria-hidden="true">
-                    <div className="modal-dialog" role="document">
-                        <div className="modal-content">
-                        <div className="modal-header">
-                            <h5 className="modal-title" id="highScoreModalLabel">High Scores!</h5>
-                            <button type="button" className="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                            </button>
-                        </div>
-                        <div className="modal-body">
-                            Placeholder high Scores
-                            <ol>
-                                <li>Bill: 49</li>
-                                <li>Ted: 45</li>
-                                <li>Jill: 43</li>
-                                <li>Winifred: 40</li>
-                            </ol>
-                        </div>
-                        </div>
                     </div>
                 </div>
 
