@@ -4,20 +4,24 @@ function QuizBody() {
 
     const questionsArray = require('../../assets/Apprentice_TandemFor400_Data.json');
     
+    const [gameOff, setGameOff] = useState(true);
     const [tenQuestions, setTenQuestions] = useState([]);
+    const [currentQuestion, setCurrentQuestion] = useState(0);
     
     function startQuiz() {
-        const randomQuestions = [];
+        
+        setGameOff(false);
+
         // choose ten random questions
         for (let i = 0; i < 10; i++) {
             let num = Math.floor(Math.random() * (questionsArray.length + 1));
             
-            if (!randomQuestions.includes(num)) {
-                randomQuestions.push(questionsArray[num]);
+            if (!tenQuestions.includes(num)) {
+                tenQuestions.push(questionsArray[num]);
             }
         }
 
-        console.log(randomQuestions);
+        console.log(tenQuestions);
     };
 
     function handleAnswerChoice () {
@@ -87,12 +91,18 @@ function QuizBody() {
                 </div>
                 
                 <div className='card-body'>
-                    <p id='question' className="card-text text-center h5 border rounded p-2">{questionsArray[0].question}</p>
-                    <div className='container pt-2'>
-                        {questionsArray[0].choices.map((choice) => (
-                            <button className="btn btn-primary btn-block m-1" onClick={handleAnswerChoice}>{choice.answer}</button>
-                        ))}
-                    </div>
+                    {gameOff ? (
+                        <p>Press Start to begin the Trivia Quiz!</p>
+                    ) : (
+                        <>
+                        <p id='question' className="card-text text-center h5 border rounded p-2">{tenQuestions[currentQuestion].question}</p>
+                        <div className='container pt-2'>
+                            {tenQuestions[currentQuestion].choices.map((choice) => (
+                                <button className="btn btn-primary btn-block m-1" onClick={handleAnswerChoice}>{choice.answer}</button>
+                            ))}
+                        </div>
+                        </>
+                    )} 
                 </div>
             </div>
         </div>
