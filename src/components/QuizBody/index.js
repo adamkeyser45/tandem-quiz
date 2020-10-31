@@ -1,39 +1,12 @@
 import React from 'react';
 
 function QuizBody() {
-    const startBtn = document.getElementById('startBtn');
-    const questionNum = document.getElementById('questionNum');
-    const question = document.getElementById('question');
-    const answerChoice1 = document.getElementById('answerChoice1');
-    const answerChoice2 = document.getElementById('answerChoice2');
-    const answerChoice3 = document.getElementById('answerChoice3');
-    const answerChoice4 = document.getElementById('answerChoice4');
-    const questionsArray = require('../../assets/Apprentice_TandemFor400_Data.json');
-
-    function startQuiz() {
-
-        chooseQuestion();
-
-    };
-
-    function chooseQuestion() {
-        let Num = Math.floor(Math.random() * (questionsArray.length + 1));
-        console.log(Num);
-
-        questionNum.innerHTML = 'Question ' + `${Num + 1}`;
-        question.innerHTML = questionsArray[Num].question;
-        answerChoice1.innerHTML = questionsArray[Num].incorrect[0];
-        answerChoice2.innerHTML = questionsArray[Num].incorrect[1];
-        answerChoice3.innerHTML = questionsArray[Num].incorrect[2];
-        answerChoice4.innerHTML = questionsArray[Num].correct;
-    };
-
     return (
         <div className="contrainer-fluid" >
             <div className='card border m-4' style={{height: '425px'}}>
                 <div className='card-header text-center'>
                     <div className='btn-group'>
-                    <button className='btn btn-light border' id='startBtn' onClick={startQuiz}>
+                    <button className='btn btn-light border' id='startBtn'>
                         Press to Start!
                     </button>
                     <div className="dropdown">
@@ -92,7 +65,7 @@ function QuizBody() {
                 </div>
                 
                 <div className='card-body'>
-                    <h5 id='questionNum' className="card-title text-center h3">Question #</h5>
+                    <h5 className="card-title text-center h3">Question <span id='questionNum'>#</span></h5>
                     <p id='question' className="card-text text-center h5 border rounded p-2">And your first question is...</p>
                     <div className='container pt-2'>
                         <button id='answerChoice1' className="btn btn-primary btn-block m-1">Answer 1</button>
