@@ -2,33 +2,26 @@ import React, { useState } from 'react';
 
 function QuizBody() {
 
-    const [questionText, setQuestionText] = useState('And your first question is...');
-    const [button1Text, setButton1Text] = useState('Answer Choice');
-    const [button2Text, setButton2Text] = useState('Answer Choice');
-    const [button3Text, setButton3Text] = useState('Answer Choice');
-    const [button4Text, setButton4Text] = useState('Answer Choice');
-
     const questionsArray = require('../../assets/Apprentice_TandemFor400_Data.json');
     
-
-    const button1 = (text) => setButton1Text(text);
-    const button2 = (text) => setButton2Text(text);
-    const button3 = (text) => setButton3Text(text);
-    const button4 = (text) => setButton4Text(text);
+    const [tenQuestions, setTenQuestions] = useState([]);
     
-    function testClick() {
-        // console.log(questionsArray);
-        let num = Math.floor(Math.random() * (questionsArray.length + 1));
-        const usedQuestions = [];
-        setQuestionText(questionsArray[num].question);
-        button1(questionsArray[num].incorrect[0]);
-        button2(questionsArray[num].incorrect[1]);
-        button3(questionsArray[num].incorrect[2]);
-        button4(questionsArray[num].incorrect[3]);
+    function startQuiz() {
+        const randomQuestions = [];
+        // choose ten random questions
+        for (let i = 0; i < 10; i++) {
+            let num = Math.floor(Math.random() * (questionsArray.length + 1));
+            
+            if (!randomQuestions.includes(num)) {
+                randomQuestions.push(questionsArray[num]);
+            }
+        }
 
-        usedQuestions.push(questionsArray[num]);
-        console.log(usedQuestions);
-        console.log(questionsArray);
+        console.log(randomQuestions);
+    };
+
+    function handleAnswerChoice () {
+        console.log('Hello!');
     };
 
     return (
@@ -36,7 +29,7 @@ function QuizBody() {
             <div className='card border m-4' style={{height: '425px'}}>
                 <div className='card-header text-center'>
                     <div className='btn-group'>
-                    <button className='btn btn-light border' id='startBtn' onClick={testClick}>
+                    <button className='btn btn-light border' id='startBtn' onClick={startQuiz}>
                         Start!
                     </button>
                     <div className="dropdown">
@@ -94,12 +87,11 @@ function QuizBody() {
                 </div>
                 
                 <div className='card-body'>
-                    <p id='question' className="card-text text-center h5 border rounded p-2">{questionText}</p>
+                    <p id='question' className="card-text text-center h5 border rounded p-2">{questionsArray[0].question}</p>
                     <div className='container pt-2'>
-                        <button id='answerChoice1' className="btn btn-primary btn-block m-1">{button1Text}</button>
-                        <button id='answerChoice2' className="btn btn-primary btn-block m-1">{button2Text}</button>
-                        <button id='answerChoice3' className="btn btn-primary btn-block m-1">{button3Text}</button>
-                        <button id='answerChoice4' className="btn btn-primary btn-block m-1">{button4Text}</button>
+                        {questionsArray[0].choices.map((choice) => (
+                            <button className="btn btn-primary btn-block m-1" onClick={handleAnswerChoice}>{choice.answer}</button>
+                        ))}
                     </div>
                 </div>
             </div>
