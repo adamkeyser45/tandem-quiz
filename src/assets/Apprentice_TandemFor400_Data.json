@@ -1,113 +1,191 @@
 [
   {
     "question": "What was Tandem's previous name?",
-    "incorrect": ["Tandem", "Devmynd", "Burger Shack", "Extraordinary Humans"],
-    "correct": "Devmynd"
+    "choices": [
+      { "answer": "Tandem", "isCorrect": false },
+      { "answer": "Burger Shack", "isCorrect":false },
+      { "answer": "Devmynd", "isCorrect": true },
+      { "answer": "Extraordinary Humans", "isCorrect":false }
+    ]
   },
   {
     "question": "In Shakespeare's play Julius Caesar, Caesar's last words were...",
-    "incorrect": ["Iacta alea est!", "Vidi, vini, vici", "Et tu, Brute?", "Aegri somnia vana"],
-    "correct": "Et tu, Brute?"
+    "choices": [
+      { "answer": "Iacta alea est!", "isCorrect": false },
+      { "answer": "Vidi, vini, vici", "isCorrect":false },
+      { "answer": "Et tu, Brute?", "isCorrect": true },
+      { "answer": "Aegri somnia vana", "isCorrect":false }
+    ]
   },
   {
     "question": "A group of tigers are referred to as:",
-    "incorrect": ["Chowder", "Pride", "Destruction", "Ambush"],
-    "correct": "Ambush"
+    "choices": [
+      { "answer": "Chowder", "isCorrect": false },
+      { "answer": "Pride", "isCorrect": false },
+      { "answer": "Destruction", "isCorrect": false },
+      { "answer": "Ambush", "isCorrect": true }
+    ]
   },
   {
     "question": "What is the top speed an average cat can travel?",
-    "incorrect": ["42 mph", "31 mph", "13 mph", "9 mph"],
-    "correct": "31 mph"
+    "choices": [
+      { "answer": "42 mph", "isCorrect": false },
+      { "answer": "31 mph", "isCorrect": true },
+      { "answer": "13 mph", "isCorrect": false },
+      { "answer": "9 mph", "isCorrect": false }
+    ]
   },
   {
     "question": "A cat can jump to _____ times its own height:",
-    "incorrect": ["5", "3", "9", "7"],
-    "correct": "5"
+    "choices": [
+      { "answer": "5", "isCorrect": true },
+      { "answer": "3", "isCorrect": false },
+      { "answer": "9", "isCorrect": false },
+      { "answer": "7", "isCorrect": false }
+    ] 
   },
   {
     "question": "What is the only letter that doesn't appear in a US state name?",
-    "incorrect": ["M", "Z", "X", "Q"],
-    "correct": "Q"
+    "choices": [
+      { "answer": "M", "isCorrect": false },
+      { "answer": "Z", "isCorrect": false },
+      { "answer": "X", "isCorrect": false },
+      { "answer": "Q", "isCorrect": true }
+    ]
   },
   {
     "question": "What is the name for a cow-bison hybrid?",
-    "incorrect": ["Cowson", "Bicow", "Mooson", "Beefalo"],
-    "correct": "Beefalo"
+    "choices": [
+      { "answer": "Cowson", "isCorrect": false },
+      { "answer": "Bicow", "isCorrect": false },
+      { "answer": "Mooson", "isCorrect": false },
+      { "answer": "Beefalo", "isCorrect": true }
+    ]
   },
   {
     "question": "What is the largest freshwater lake in the world?",
-    "incorrect": ["Lake Baikal", "Lake Superior", "Lake Michigan", "Lake Victoria"],
-    "correct": "Lake Superior"
+    "choices": [
+      { "answer": "Lake Baikal", "isCorrect": false },
+      { "answer": "Lake Superior", "isCorrect": true },
+      { "answer": "Lake Michigan", "isCorrect": false },
+      { "answer": "Lake Victoria", "isCorrect": false }
+    ]
   },
-
   {
     "question": "In a website address bar, what does WWW stand for?",
-    "incorrect": ["Wild Wild West", "War World Web", "World Wide Web", "Web Width Website"],
-    "correct": "World Wide Web"
+    "choices": [
+      { "answer": "Wild Wild West", "isCorrect": false },
+      { "answer": "War World Web", "isCorrect": true },
+      { "answer": "World Wide Web", "isCorrect": false },
+      { "answer": "Web Width Website", "isCorrect": false }
+    ]
   },
   {
     "question": "In a game of bingo, what number is represented by the name two little ducks?",
-    "incorrect": ["22", "20", "55", "77"],
-    "correct": "22"
+    "choices": [
+      { "answer": "22", "isCorrect": true },
+      { "answer": "20", "isCorrect": false },
+      { "answer": "55", "isCorrect": false },
+      { "answer": "77", "isCorrect": false }
+    ]
   },
   {
     "question": "According to Greek mythology, who was the first woman on Earth?",
-    "incorrect": ["Lilith", "Eve", "Hera", "Pandora"],
-    "correct": "Pandora"
+    "choices": [
+      { "answer": "Lilith", "isCorrect": false },
+      { "answer": "Eve", "isCorrect": false },
+      { "answer": "Hera", "isCorrect": false },
+      { "answer": "Pandora", "isCorrect": true }
+    ]
   },
   {
     "question": "In which European city would you find Orly airport?",
-    "incorrect": ["London", "Paris", "Belgium", "Munich"],
-    "correct": "Paris"
+    "choices": [
+      { "answer": "London", "isCorrect": false },
+      { "answer": "Paris", "isCorrect": true },
+      { "answer": "Belgium", "isCorrect": false },
+      { "answer": "Munich", "isCorrect": false }
+    ]
   },
   {
     "question": "Where would you find the Sea of Tranquility?",
-    "incorrect": ["California", "The Moon", "Siberia", "China"],
-    "correct": "The Moon"
+    "choices": [
+      { "answer": "California", "isCorrect": false },
+      { "answer": "The Moon", "isCorrect": true },
+      { "answer": "Siberia", "isCorrect": false },
+      { "answer": "China", "isCorrect": false }
+    ]
   },
   {
     "question": "Which artist painted 'Girl with a Pearl Earrin'?",
-    "incorrect": ["Van Gogh", "Picasso", "Vermeer", "Da Vinci"],
-    "correct": "Vermeer"
+    "choices": [
+      { "answer": "Van Gogh", "isCorrect": false },
+      { "answer": "Picasso", "isCorrect": false },
+      { "answer": "Vermeer", "isCorrect": true },
+      { "answer": "Da Vinci", "isCorrect": false }
+    ]
   },
   {
     "question": "What is the official name for the 'hashtag' symbol?",
-    "incorrect": ["Number sign", "Hash Sign", "Pound", "Octothorpe"],
-    "correct": "Octothorpe"
+    "choices": [
+      { "answer": "Number sign", "isCorrect": false },
+      { "answer": "Hash Sign", "isCorrect": false },
+      { "answer": "Pound", "isCorrect": false },
+      { "answer": "Octothorpe", "isCorrect": true }
+    ]
   },
   {
     "question": "Not American at all, where is apple pie from?",
-    "incorrect": ["Japan", "Ethiopia", "England", "Canada"],
-    "correct": "England"
+    "choices": [
+      { "answer": "Japan", "isCorrect": false },
+      { "answer": "Ethiopia", "isCorrect": false },
+      { "answer": "England", "isCorrect": true },
+      { "answer": "Canada", "isCorrect": false }
+    ]
   },
   {
     "question": "What is the national animal of Scotland?",
-    "incorrect": ["Bear", "Rabbit", "Seal", "Unicorn"],
-    "correct": "Unicorn"
+    "choices": [
+      { "answer": "Bear", "isCorrect": false },
+      { "answer": "Rabbit", "isCorrect": false },
+      { "answer": "Seal", "isCorrect": false },
+      { "answer": "Unicorn", "isCorrect": true }
+    ]
   },
   {
     "question": "Where in the world is the only place where Canada is *due south*",
-    "incorrect": ["Detroit", "Alaska", "Russia", "Washington"],
-    "correct": "Detroit"
+    "choices": [
+      { "answer": "Detroit", "isCorrect": true },
+      { "answer": "Alaska", "isCorrect": false },
+      { "answer": "Russia", "isCorrect": false },
+      { "answer": "Washington", "isCorrect": false }
+    ]
   },
   {
     "question": "Approximately how many grapes go into a bottle of wine?",
-    "incorrect": ["500", "200", "1000", "700"],
-    "correct": "700"
+    "choices": [
+      { "answer": "500", "isCorrect": false },
+      { "answer": "200", "isCorrect": false },
+      { "answer": "1000", "isCorrect": false },
+      { "answer": "700", "isCorrect": true }
+    ]
   },
   {
     "question": "How much does a US One Dollar Bill cost to make?",
-    "incorrect": ["$0.25", "$1", "$0.05", "$5"],
-    "correct": "$0.05"
+    "choices": [
+      { "answer": "$0.25", "isCorrect": false },
+      { "answer": "$1", "isCorrect": false },
+      { "answer": "$0.05", "isCorrect": true },
+      { "answer": "$5", "isCorrect": false }
+    ]
   },
   {
     "question": "The Vatican bank has the only ATM in the world that allows users to do what?",
-    "incorrect": [
-      "Perform transactions in Latin",
-      "Receive withdrawls in rosary beads",
-      "Vote for the Pope",
-      "Purchase indulgences"
-    ],
-    "correct": "Perform transactions in Latin"
+    "choices": [
+      { "answer": "Perform transactions in Latin", "isCorrect": true },
+      { "answer": "Receive withdrawls in rosary beads", "isCorrect": false },
+      { "answer": "Vote for the Pope", "isCorrect": false },
+      { "answer": "Purchase indulgences", "isCorrect": false }
+    ]
   }
 ]
