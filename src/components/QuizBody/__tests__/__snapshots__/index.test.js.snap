@@ -1,0 +1,139 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`QuizBody Component matches snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="contrainer-fluid"
+  >
+    <div
+      class="card border m-4"
+      style="height: 375px;"
+    >
+      <div
+        class="card-header text-center"
+      >
+        <div
+          class="btn-group"
+        >
+          <button
+            class="btn btn-light border"
+            id="startBtn"
+          >
+            Start!
+          </button>
+          <div
+            class="dropdown"
+          >
+            <button
+              aria-expanded="false"
+              aria-haspopup="true"
+              class="btn btn-light border dropdown-toggle"
+              data-toggle="dropdown"
+              id="dropdownMenuButton"
+              type="button"
+            >
+              Options
+            </button>
+            <div
+              aria-labelledby="dropdownMenuButton"
+              class="dropdown-menu"
+            >
+              <button
+                class="btn btn-link"
+                data-target="#rulesModal"
+                data-toggle="modal"
+                type="button"
+              >
+                How To Play
+              </button>
+              <button
+                class="btn btn-link"
+                type="button"
+              >
+                Reset Quiz
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        aria-hidden="true"
+        aria-labelledby="rulesModalLabel"
+        class="modal fade"
+        id="rulesModal"
+        role="dialog"
+        tabindex="-1"
+      >
+        <div
+          class="modal-dialog"
+          role="document"
+        >
+          <div
+            class="modal-content"
+          >
+            <div
+              class="modal-header"
+            >
+              <h5
+                class="modal-title"
+                id="rulesModalLabel"
+              >
+                How to Play!
+              </h5>
+              <button
+                aria-label="Close"
+                class="close"
+                data-dismiss="modal"
+                type="button"
+              >
+                <span
+                  aria-hidden="true"
+                >
+                  ×
+                </span>
+              </button>
+            </div>
+            <div
+              class="modal-body"
+            >
+              <ol>
+                <li>
+                  Press "Start!" to begin the quiz.
+                </li>
+                <li>
+                  Each quiz is 10 questions, chosen randomly from a list of 21, and each question will only be shown once.
+                </li>
+                <li>
+                  Read the Trivia Question and choose one of the four answer choices.
+                </li>
+                <li>
+                  If your answer is correct, the buttons will flash green, if it is incorrect, they will flash red.
+                </li>
+                <li>
+                  When all of the questions are done, you should see your score. You get 10 points for each correct answer.
+                </li>
+                <li>
+                  If you ever need to reset the quiz, click "Reset Quiz" in the "Options" menu. 
+                </li>
+              </ol>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="card-body text-center"
+      >
+        <h2>
+          Press Start to begin the Trivia Quiz!
+        </h2>
+        <h4>
+          Your last score was 0.
+        </h4>
+        <h4>
+          Can you do better?
+        </h4>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
