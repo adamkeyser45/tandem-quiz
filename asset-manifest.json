@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/tandem-quiz/static/css/main.ab7136cd.chunk.css",
+    "main.js": "/tandem-quiz/static/js/main.c320edc0.chunk.js",
+    "main.js.map": "/tandem-quiz/static/js/main.c320edc0.chunk.js.map",
+    "runtime-main.js": "/tandem-quiz/static/js/runtime-main.4f1930c9.js",
+    "runtime-main.js.map": "/tandem-quiz/static/js/runtime-main.4f1930c9.js.map",
+    "static/js/2.2ce27bd1.chunk.js": "/tandem-quiz/static/js/2.2ce27bd1.chunk.js",
+    "static/js/2.2ce27bd1.chunk.js.map": "/tandem-quiz/static/js/2.2ce27bd1.chunk.js.map",
+    "static/js/3.581a6d7e.chunk.js": "/tandem-quiz/static/js/3.581a6d7e.chunk.js",
+    "static/js/3.581a6d7e.chunk.js.map": "/tandem-quiz/static/js/3.581a6d7e.chunk.js.map",
+    "index.html": "/tandem-quiz/index.html",
+    "static/css/main.ab7136cd.chunk.css.map": "/tandem-quiz/static/css/main.ab7136cd.chunk.css.map",
+    "static/js/2.2ce27bd1.chunk.js.LICENSE.txt": "/tandem-quiz/static/js/2.2ce27bd1.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.4f1930c9.js",
+    "static/js/2.2ce27bd1.chunk.js",
+    "static/css/main.ab7136cd.chunk.css",
+    "static/js/main.c320edc0.chunk.js"
+  ]
+}
