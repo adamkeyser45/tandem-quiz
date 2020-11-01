@@ -84,8 +84,8 @@
     "question": "In a website address bar, what does WWW stand for?",
     "choices": [
       { "answer": "Wild Wild West", "isCorrect": false },
-      { "answer": "War World Web", "isCorrect": true },
-      { "answer": "World Wide Web", "isCorrect": false },
+      { "answer": "War World Web", "isCorrect": false },
+      { "answer": "World Wide Web", "isCorrect": true },
       { "answer": "Web Width Website", "isCorrect": false }
     ]
   },
