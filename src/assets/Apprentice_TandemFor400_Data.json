@@ -117,7 +117,7 @@
     ]
   },
   {
-    "question": "Which artist painted 'Girl with a Pearl Earrin'?",
+    "question": "Which artist painted 'Girl with a Pearl Earring'?",
     "choices": [
       { "answer": "Van Gogh", "isCorrect": false },
       { "answer": "Picasso", "isCorrect": false },

@@ -8,6 +8,7 @@ function QuizBody() {
     const [tenQuestions, setTenQuestions] = useState([]);
     const [currentQuestion, setCurrentQuestion] = useState(0);
     const [score, setScore] = useState(0);
+    const [btnClass, setBtnClass] = useState("btn btn-primary btn-block m-1")
     
     function startQuiz() {
         
@@ -20,33 +21,38 @@ function QuizBody() {
             let num = Math.floor(Math.random() * (questionsArray.length));
             
             if (chosen.includes(num)) {
-                console.log(num);
+                
             } else {
                 chosen.push(num);
                 tenQuestions.push(questionsArray[num]);
             }
         }
-
-        console.log(tenQuestions);
     };
 
     function resetQuiz() {
         setGameOff(true);
         setCurrentQuestion(0);
         setTenQuestions([]);
-        console.log(tenQuestions);
     };
 
     function handleAnswerChoice (isCorrect) {
         if (isCorrect === true) {
             setScore(score + 10);
-        }
-        const nextQuestion = currentQuestion + 1;
-        if (nextQuestion < tenQuestions.length) {
-            setCurrentQuestion(nextQuestion);
+            setBtnClass("btn btn-success btn-block m-1");
         } else {
-           resetQuiz();
+            setBtnClass("btn btn-danger btn-block m-1")
         }
+
+        setTimeout(function() {
+            const nextQuestion = currentQuestion + 1;
+            if (nextQuestion < tenQuestions.length) {
+                setCurrentQuestion(nextQuestion);
+                setBtnClass("btn btn-primary btn-block m-1");
+            } else {
+            resetQuiz();
+            }
+        }, 500);
+
         
     };
 
@@ -103,7 +109,7 @@ function QuizBody() {
                         <p id='question' className="card-text text-center h5 border rounded p-2">{tenQuestions[currentQuestion].question}</p>
                         <div className='container pt-2'>
                             {tenQuestions[currentQuestion].choices.map((choice) => (
-                                <button className="btn btn-primary btn-block m-1" onClick={()=> handleAnswerChoice(choice.isCorrect)}>{choice.answer}</button>
+                                <button className={btnClass} onClick={()=> handleAnswerChoice(choice.isCorrect)}>{choice.answer}</button>
                             ))}
                         </div>
                         </>
