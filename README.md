@@ -27,10 +27,10 @@ This project is a Quiz Application that can help you prepare for your next Trivi
 
 ### Screenshots
 
-Desktop
+#### Desktop
 ![Screenshot of Desktop Application](src/assets/images/desktop_screenshot.png)
 
-Mobile
+#### Mobile
 ![Screenshot of Mobile Application](src/assets/images/mobile_screenshot.jpg)
   
 ## Assumptions
