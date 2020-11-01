@@ -1,22 +1,28 @@
 import React, { useState } from 'react';
+import $ from 'jquery';
 
 function QuizBody() {
 
     const questionsArray = require('../../assets/Apprentice_TandemFor400_Data.json');
-    
+
     const [gameOff, setGameOff] = useState(true);
     const [tenQuestions, setTenQuestions] = useState([]);
     const [currentQuestion, setCurrentQuestion] = useState(0);
+    const [score, setScore] = useState(0);
     
     function startQuiz() {
         
         setGameOff(false);
+        const chosen = [];
 
         // choose ten random questions
-        for (let i = 0; i < 10; i++) {
-            let num = Math.floor(Math.random() * (questionsArray.length + 1));
+        while (tenQuestions.length < 10) {
+            let num = Math.floor(Math.random() * (questionsArray.length));
             
-            if (!tenQuestions.includes(num)) {
+            if (chosen.includes(num)) {
+                console.log(num);
+            } else {
+                chosen.push(num);
                 tenQuestions.push(questionsArray[num]);
             }
         }
@@ -34,7 +40,7 @@ function QuizBody() {
         if (nextQuestion < tenQuestions.length) {
             setCurrentQuestion(nextQuestion);
         } else {
-            alert('YOOOOOOOOOOOOOOO');
+           resetQuiz();
         }
         
     };
@@ -44,18 +50,18 @@ function QuizBody() {
             <div className='card border m-4' style={{height: '425px'}}>
                 <div className='card-header text-center'>
                     <div className='btn-group'>
-                    <button className='btn btn-light border' id='startBtn' onClick={startQuiz}>
-                        Start!
-                    </button>
-                    <div className="dropdown">
-                        <button className="btn btn-light border dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Options
+                        <button className='btn btn-light border' id='startBtn' onClick={startQuiz}>
+                            Start!
                         </button>
-                        <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                            <button type='button' className='btn btn-link' data-toggle='modal' data-target='#rulesModal'>How To Play</button>
-                            <button type='button' className='btn btn-link' onClick={resetQuiz}>Reset Quiz</button>
+                        <div className="dropdown">
+                            <button className="btn btn-light border dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Options
+                            </button>
+                            <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                <button type='button' className='btn btn-link' data-toggle='modal' data-target='#rulesModal'>How To Play</button>
+                                <button type='button' className='btn btn-link' onClick={resetQuiz}>Reset Quiz</button>
+                            </div>
                         </div>
-                    </div>
                     </div>
                 </div>
 
@@ -80,9 +86,13 @@ function QuizBody() {
                     </div>
                 </div>
                 
-                <div className='card-body'>
+                <div className='card-body text-center'>
                     {gameOff ? (
-                        <p>Press Start to begin the Trivia Quiz!</p>
+                        <>
+                        <h2>Press Start to begin the Trivia Quiz!</h2>
+                        <h4>Your last score was {score}.</h4>
+                        <h4>Can you do better?</h4>
+                        </>
                     ) : (
                         <>
                         <p id='question' className="card-text text-center h5 border rounded p-2">{tenQuestions[currentQuestion].question}</p>
