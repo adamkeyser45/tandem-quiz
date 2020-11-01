@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import $ from 'jquery';
 
 function QuizBody() {
 
@@ -35,7 +34,10 @@ function QuizBody() {
         setTenQuestions([]);
     };
 
-    function handleAnswerChoice () {
+    function handleAnswerChoice (isCorrect) {
+        if (isCorrect === true) {
+            setScore(score + 10);
+        }
         const nextQuestion = currentQuestion + 1;
         if (nextQuestion < tenQuestions.length) {
             setCurrentQuestion(nextQuestion);
@@ -98,7 +100,7 @@ function QuizBody() {
                         <p id='question' className="card-text text-center h5 border rounded p-2">{tenQuestions[currentQuestion].question}</p>
                         <div className='container pt-2'>
                             {tenQuestions[currentQuestion].choices.map((choice) => (
-                                <button className="btn btn-primary btn-block m-1" onClick={handleAnswerChoice}>{choice.answer}</button>
+                                <button className="btn btn-primary btn-block m-1" onClick={()=> handleAnswerChoice(choice.isCorrect)}>{choice.answer}</button>
                             ))}
                         </div>
                         </>
