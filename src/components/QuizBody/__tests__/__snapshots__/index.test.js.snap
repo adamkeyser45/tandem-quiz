@@ -7,7 +7,6 @@ exports[`QuizBody Component matches snapshot 1`] = `
   >
     <div
       class="card border m-4"
-      style="height: 375px;"
     >
       <div
         class="card-header text-center"
