@@ -12,6 +12,10 @@ function QuizBody() {
     
     function startQuiz() {
         
+        if (!gameOff) {
+            return;
+        }
+
         setGameOff(false);
         setScore(0);
         const chosen = [];
@@ -50,6 +54,7 @@ function QuizBody() {
                 setBtnClass("btn btn-primary btn-block m-1");
             } else {
             resetQuiz();
+            setBtnClass("btn btn-primary btn-block m-1");
             }
         }, 500);
 
