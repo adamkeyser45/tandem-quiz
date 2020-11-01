@@ -12,6 +12,7 @@ function QuizBody() {
     function startQuiz() {
         
         setGameOff(false);
+        setScore(0);
         const chosen = [];
 
         // choose ten random questions
@@ -31,7 +32,9 @@ function QuizBody() {
 
     function resetQuiz() {
         setGameOff(true);
+        setCurrentQuestion(0);
         setTenQuestions([]);
+        console.log(tenQuestions);
     };
 
     function handleAnswerChoice (isCorrect) {
