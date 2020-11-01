@@ -61,7 +61,7 @@ function QuizBody() {
 
     return (
         <div className="contrainer-fluid" >
-            <div className='card border m-4' style={{height: '375px'}}>
+            <div className='card border m-4' >
                 <div className='card-header text-center'>
                     <div className='btn-group'>
                         <button className='btn btn-light border' id='startBtn' onClick={startQuiz}>
