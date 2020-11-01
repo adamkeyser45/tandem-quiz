@@ -57,7 +57,7 @@ function QuizBody() {
 
     return (
         <div className="contrainer-fluid" >
-            <div className='card border m-4' style={{height: '425px'}}>
+            <div className='card border m-4' style={{height: '375px'}}>
                 <div className='card-header text-center'>
                     <div className='btn-group'>
                         <button className='btn btn-light border' id='startBtn' onClick={startQuiz}>
@@ -114,10 +114,10 @@ function QuizBody() {
                     ) : ( 
                         <>
                         {/* dynamically generate questions and answers */}
-                        <p id='question' className="card-text text-center h5 border rounded p-2">{tenQuestions[currentQuestion].question}</p>
+                        <p key="question" id='question' className="card-text text-center h5 border rounded p-2">{tenQuestions[currentQuestion].question}</p>
                         <div className='container pt-2'>
                             {tenQuestions[currentQuestion].choices.map((choice) => (
-                                <button className={btnClass} onClick={()=> handleAnswerChoice(choice.isCorrect)}>{choice.answer}</button>
+                                <button key={choice.id} className={btnClass} onClick={()=> handleAnswerChoice(choice.isCorrect)}>{choice.answer}</button>
                             ))}
                         </div>
                         </>

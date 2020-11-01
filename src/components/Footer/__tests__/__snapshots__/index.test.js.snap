@@ -1,0 +1,43 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Footer Component matches snapshot 1`] = `
+<DocumentFragment>
+  <footer
+    class="footer fixed-bottom"
+  >
+    <div
+      class="d-flex justify-content-center"
+    >
+      <a
+        class="btn btn-outline-dark btn-social mx-1"
+        href="https://www.facebook.com/adam.keyser"
+      >
+        <i
+          class="fab fa-fw fa-facebook-f fa-lg"
+        />
+      </a>
+      <a
+        class="btn btn-outline-dark btn-social mx-1"
+        href="https://github.com/adamkeyser45"
+      >
+        <i
+          class="fab fa-fw fa-github fa-lg"
+        />
+      </a>
+      <a
+        class="btn btn-outline-dark btn-social mx-1"
+        href="https://www.linkedin.com/in/adam-keyser-693741107/"
+      >
+        <i
+          class="fab fa-fw fa-linkedin-in fa-lg"
+        />
+      </a>
+    </div>
+    <span
+      class="d-flex justify-content-center text-muted mx-auto"
+    >
+      Copyright © Adam Keyser 2020
+    </span>
+  </footer>
+</DocumentFragment>
+`;
