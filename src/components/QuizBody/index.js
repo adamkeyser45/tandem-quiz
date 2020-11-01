@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
 function QuizBody() {
-
+    // linked JSON quiz questions and answers
     const questionsArray = require('../../assets/Apprentice_TandemFor400_Data.json');
 
     const [gameOff, setGameOff] = useState(true);
@@ -11,21 +11,16 @@ function QuizBody() {
     const [btnClass, setBtnClass] = useState("btn btn-primary btn-block m-1")
     
     function startQuiz() {
-        
         if (!gameOff) {
             return;
         }
-
         setGameOff(false);
         setScore(0);
         const chosen = [];
-
-        // choose ten random questions
+        // Choose 10 random questions from the 21
         while (tenQuestions.length < 10) {
             let num = Math.floor(Math.random() * (questionsArray.length));
-            
             if (chosen.includes(num)) {
-                
             } else {
                 chosen.push(num);
                 tenQuestions.push(questionsArray[num]);
@@ -40,13 +35,14 @@ function QuizBody() {
     };
 
     function handleAnswerChoice (isCorrect) {
+        // If the choice is correct, add 10 points and change color to green, else, change color to red
         if (isCorrect === true) {
             setScore(score + 10);
             setBtnClass("btn btn-success btn-block m-1");
         } else {
             setBtnClass("btn btn-danger btn-block m-1")
         }
-
+        // After half a second, return the button color to normal and go to next question
         setTimeout(function() {
             const nextQuestion = currentQuestion + 1;
             if (nextQuestion < tenQuestions.length) {
@@ -57,8 +53,6 @@ function QuizBody() {
             setBtnClass("btn btn-primary btn-block m-1");
             }
         }, 500);
-
-        
     };
 
     return (
@@ -80,7 +74,7 @@ function QuizBody() {
                         </div>
                     </div>
                 </div>
-
+                {/* Modal for rules */}
                 <div className="modal fade" id="rulesModal" tabIndex="-1" role="dialog" aria-labelledby="rulesModalLabel" aria-hidden="true">
                     <div className="modal-dialog" role="document">
                         <div className="modal-content">
@@ -109,7 +103,7 @@ function QuizBody() {
                         </div>
                     </div>
                 </div>
-                
+                {/* displays when the game isn't on */}
                 <div className='card-body text-center'>
                     {gameOff ? (
                         <>
@@ -117,8 +111,9 @@ function QuizBody() {
                         <h4>Your last score was {score}.</h4>
                         <h4>Can you do better?</h4>
                         </>
-                    ) : (
+                    ) : ( 
                         <>
+                        {/* dynamically generate questions and answers */}
                         <p id='question' className="card-text text-center h5 border rounded p-2">{tenQuestions[currentQuestion].question}</p>
                         <div className='container pt-2'>
                             {tenQuestions[currentQuestion].choices.map((choice) => (
