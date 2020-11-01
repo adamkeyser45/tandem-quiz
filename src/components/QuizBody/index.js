@@ -30,7 +30,13 @@ function QuizBody() {
     };
 
     function handleAnswerChoice () {
-        console.log('Hello!');
+        const nextQuestion = currentQuestion + 1;
+        if (nextQuestion < tenQuestions.length) {
+            setCurrentQuestion(nextQuestion);
+        } else {
+            alert('YOOOOOOOOOOOOOOO');
+        }
+        
     };
 
     return (
