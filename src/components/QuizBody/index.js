@@ -91,11 +91,19 @@ function QuizBody() {
                             </button>
                         </div>
                         <div className="modal-body">
-                            Rules
                             <ol>
-                                <li>Press Start to start the quiz</li>
-                                <li>Press the button that has the correct answer for each question</li>
-                                <li>When all of the questions are done, see your score!</li>
+                                <li>Press "Start!" to begin the quiz.</li>
+                                <li>Each quiz is 10 questions, chosen randomly from a list of 21, 
+                                    and each question will only be shown once.
+                                </li>
+                                <li>Read the Trivia Question and choose one of the four answer choices.</li>
+                                <li>If your answer is correct, the buttons will flash green, if it is incorrect, 
+                                    they will flash red.
+                                </li>
+                                <li>When all of the questions are done, you should see your score. You get 10 
+                                    points for each correct answer.
+                                </li>
+                                <li>If you ever need to reset the quiz, click "Reset Quiz" in the "Options" menu. </li>
                             </ol>
                         </div>
                         </div>
