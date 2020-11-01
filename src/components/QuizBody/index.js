@@ -8,7 +8,8 @@ function QuizBody() {
     const [tenQuestions, setTenQuestions] = useState([]);
     const [currentQuestion, setCurrentQuestion] = useState(0);
     const [score, setScore] = useState(0);
-    const [btnClass, setBtnClass] = useState("btn btn-primary btn-block m-1")
+    const [btnClass, setBtnClass] = useState("btn btn-primary btn-block m-1");
+    const [showCorrect, setShowCorrect] = useState(false);
     
     function startQuiz() {
         if (!gameOff) {
@@ -40,19 +41,22 @@ function QuizBody() {
             setScore(score + 10);
             setBtnClass("btn btn-success btn-block m-1");
         } else {
-            setBtnClass("btn btn-danger btn-block m-1")
+            setBtnClass("btn btn-danger btn-block m-1");
         }
+        setShowCorrect(true);
         // After half a second, return the button color to normal and go to next question
         setTimeout(function() {
             const nextQuestion = currentQuestion + 1;
             if (nextQuestion < tenQuestions.length) {
                 setCurrentQuestion(nextQuestion);
+                setShowCorrect(false);
                 setBtnClass("btn btn-primary btn-block m-1");
             } else {
             resetQuiz();
+            setShowCorrect(false);
             setBtnClass("btn btn-primary btn-block m-1");
             }
-        }, 500);
+        }, 1000);
     };
 
     return (
@@ -120,6 +124,12 @@ function QuizBody() {
                                 <button key={choice.id} className={btnClass} onClick={()=> handleAnswerChoice(choice.isCorrect)}>{choice.answer}</button>
                             ))}
                         </div>
+                        {showCorrect ? (
+                            <p className="h5 mt-3">Answer: {tenQuestions[currentQuestion].correct}</p>
+                        ) : (
+                            <p></p>
+                        )}
+                        
                         </>
                     )} 
                 </div>
