@@ -6,16 +6,32 @@ This is an app to take a quiz to help you freshen up on trivia and pop culture!
 - [Assumptions](#assumptions)
 - [Acceptance Criteria](#acceptance-criteria)
 - [Available Scripts](#available-scripts)
-- [Testing](#testing)
-- [Contributing](#contributing)
+- [How It Works](#how-it-works)
+- [Considerations](#considerations)
 - [Questions](#questions)
-
 
 ## Description
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app). Personal full stack development portfolio.
+This project is a Quiz Application that can help you prepare for your next Trivia night! When the page loads you can start the game by pressing "Start!" or press the "Options" button to see the rules of the game or rest the quiz if you need to start over in the middle of the quiz.
+
+### How to Play
+
+1. Press "Start!" to begin the quiz.
+1. Each quiz is 10 questions, chosen randomly from a list of 21, and each question will only be shown once.
+1. Read the Trivia Question and choose one of the four answer choices.
+1. If your answer is correct, the buttons will flash green, if it is incorrect, they will flash red.
+1. When all of the questions are done, you should see your score. You get 10 points for each correct answer.
+1. If you ever need to reset the quiz, click "Reset Quiz" in the "Options" menu.
 
 **[Deployed Application](https://adamkeyser45.github.io/tandem-quiz/)**
+
+### Screenshots
+
+Desktop
+![Screenshot of Desktop Application](src/assets/images/desktop_screenshot.png)
+
+Mobile
+![Screenshot of Mobile Application](src/assets/images/mobile_screenshot.jpg)
   
 ## Assumptions
 
@@ -43,27 +59,37 @@ In the project directory, you can run:
 Runs the app in the development mode.<br />
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
-
 ### `npm test`
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Launches the test runner in the interactive watch mode. Make sure to press "a" in your terminal to run all of the tests. The provided tests make sure that each of the React Components render properly!<br />
 
-### `npm run build`
+## How It Works
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+The application uses React to render the page, and Bootstrap for styling. The page is divided up into three "components" (Header, Footer, and QuizBody) that are rendered in the App.js file, which displays it to the page. The main component, QuizBody, is where most of the action happens.
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+The application functions by using state in different parts of the QuizBody. The button colors, current question, score, questions, and even sections of the page are controlled by using state.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+When a user presses the "Start!" button, it firsts, switches the "gameOff" state to true, sets the score back to zero, and then chooses ten random questions  from the JSON file using a "while loop" (The JSON file was modified to make it easier to dynamically generated and used around the app). The ten chosen questions are stored in a separate array to be used for the round.
 
+Now that the questions are chosen, the app then dynamically loads the first question, and maps through the questions answer choices and creates a button for each one.
 
-## Contributing
-[Adam Keyser](https://github.com/adamkeyser45)
+When a user chooses an answer, several things happen:
+1. First, it checks to see if the answer chosen is correct by looking at the "choices" isCorrect property. If it is, then it adds 10 points to the score, and then changes all of the buttons to green. If not, it changes the color to red.
+1. Then, the correct answer is displayed below the answer choices, whether or not it is correct.
+1. Next, after 1 second, it checks to see if there have been 10 questions.
+    * If there hasn't been ten questions, it changes the buttons color back to blue, hides the correct answer area, and advances to the next question.
+    * If there has been 10 questions, then it calls the resetQuiz function, which will hide the quiz questions, reset the state of the currentQuestion to zero, and empties the array that holds the questions.
+1. When the game is over, the score is displayed back on the "start screen", while the resetQuiz function runs as mentioned above.
+
+## Considerations
+
+Future Additional Features
+* A High Score modal that allows a player to put in their initials when, and only when, they have gotten a high score.
+* An form to add your own trivia questions to the game.
+* Randomly mixing up the positions of the answers when they are generated.
+
+Other Notes
+* To really make sure that this is well tested, more testing will need to be added to make sure the various parts of the QuizBody component are functioning properly.
 
 ## Questions
 ✉️ Contact me with any questions: [email](mailto:adam.keyser45@gmail.com) , [GitHub](https://github.com/adamkeyser45)<br />
